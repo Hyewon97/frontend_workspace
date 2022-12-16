@@ -1,0 +1,10 @@
+#two {
+  background-color: green;
+}
+
+p {
+  /* 요소들을 한꺼번에 적어줄 때 적어줘야 하는 순서가 있다.이건 나중에 함 */
+  color: brown;
+  border: 2px solid black;
+}
+/* 이 스타일을 html003에서 사용을 할 때 link를 사용해줌 */
