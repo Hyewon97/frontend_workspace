@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_027_position.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+      }
+
+      .box1 {
+        width: 500px;
+        height: 100px;
+        background-color: black;
+      }
+
+      .box2 {
+        width: 500px;
+        height: 200px;
+        background-color: yellow;
+        position: relative;
+      }
+
+      .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute; /* 부모를 기준으로 바뀜. 봄의 포지션이 static이면 body를 기준으로 위치가 변경된다. */
+        left: 50px;
+        top: 50px;
+      }
+
+      .box4 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+        left: 200px;
+        top: 0;
+      }
+
+      .box5 {
+        width: 100px;
+        height: 400px;
+        background-color: aqua;
+        position: fixed;
+        right: 10px;
+        top: 50px;
+      }
+
+      .box6 {
+        width: 800px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        포지션(position 속성)
+        1. position은 박스에 대한 배치를 변경할 때 사용한다.
+        2. position의 값으로 static, absolute, relative, fixed 등이 있다.
+        3. static : 순서에 의한 기본 위치를 지정한다.
+            absilute : 부모 요소를 기준으로 위치를 변경한다. (원래의 위치값을 잃는다.)
+            relatvie : 자기 자신을 기준으로 위치를 변경한다. (원래의 위치값을 가지고 있다.)
+            fixed : 스크린을 기준으로 위치를 지정한다. (원래의 위치값을 잃는다.)
+        4. absolute의 위치 지정
+            부모요소의 position이 static이면 기준점이 body가 된다.
+            부모요소의 position이 absolute, fixed, relative이면 기준점이 부모요소이다.
+    -->
+    <div class="box1"></div>
+    <div class="box2">
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <p>요소들의 위치 변경</p>
+    </div>
+
+    <div class="box5"></div>
+    <div class="box6">
+      올해 보이스피싱 범죄와 피해 액수가 지난해보다 대폭 줄었다. 대포통장, 번호
+      변작 중계기 등 범죄 수단에 대한 경찰 단속이 강화된 영향으로 풀이된다.
+      경찰청 국가수사본부(국수본)는 지난 1~11월 전화금융사기(보이스피싱) 범죄
+      피해는 2만479건로 지난해 같은 기간(2만8646건)보다 28.5% 적었다고 21일
+      밝혔다.
+     </div>
+    </div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+  </body>
+</html>
