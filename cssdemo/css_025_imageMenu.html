@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_025_imageMenu.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+      }
+
+      /* body {
+        margin-left: 10px;
+      }*/
+
+      body div.wrap {
+        width: 1210px;
+        margin: 10px auto; /*top/bottom     right/left     메뉴를 가운데로 설정하기 위해서*/
+        background-color: yellow; /*다 끝내면 지워야 할 요소*/
+      }
+
+      h1 {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        visibility: hidden;
+        text-indent: -2000px;
+      }
+
+      ul.mainMenu {
+        /* div.wrap에서 width 값을 잡아놔서 여기선 잡지 않아도 된다. */
+        width: 1208px;
+        height: 104px;
+        list-style-type: none;
+        border-left: 2px solid;
+      }
+      ul.mainMenu li {
+        border: 2px solid;
+        float: left;
+        border-left-width: 0;
+      }
+
+      ul.mainMenu li a {
+        width: 300px;
+        height: 100px;
+        /* 가로 세로 크키값을 적용하려면 블록으로 바꿔야 한다. */
+        display: block;
+        text-indent: -2000px;
+      }
+
+      ul.mainMenu li.mail a {
+        background-image: url("images/mail.gif");
+        background-repeat: no-repeat;
+      }
+
+      ul.mainMenu li.cafe a {
+        background-image: url("images/cafe.gif");
+        background-repeat: no-repeat;
+      }
+
+      ul.mainMenu li.blog a {
+        background-image: url("images/blog.gif");
+        background-repeat: no-repeat;
+      }
+
+      ul.mainMenu li.kin a {
+        background-image: url("images/kin.gif");
+        background-repeat: no-repeat;
+      }
+
+      /*마우스 올렸을 때 이미지 변환*/
+      ul.mainMenu li.mail a:hover {
+        /* 이미지는 이미 설정되어 있어서 좌표값만 설정해줌 */
+        background-position: right bottom; /* -300px 0px;*/ /* x,y 좌표 */
+      }
+
+      ul.mainMenu li.cafe a:hover {
+        background-position: right bottom;
+      }
+
+      ul.mainMenu li.blog a:hover {
+        background-position: right bottom;
+      }
+
+      ul.mainMenu li.kin a:hover {
+        background-position: right bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>메뉴</h1>
+        <nav>
+          <ul class="mainMenu">
+            <li class="mail"><a href="#">메일</a></li>
+            <li class="cafe"><a href="#">카페</a></li>
+            <li class="blog"><a href="#">블로그</a></li>
+            <li class="kin"><a href="#">지식 in</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </body>
+</html>
