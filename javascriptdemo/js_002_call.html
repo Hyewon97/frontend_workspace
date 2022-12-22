@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_002_call.html</title>
+
+    <!-- 외부에서 정의하고 불러오기 (a.js) -->
+    <!-- <script type="text/javascript" src="js/a.js"></script> -->
+    <script defer src="js/b.js"></script>
+    <!-- <script type="text/javascript" src="js/b.js"></script> -->
+    <!-- 스크립트에서 다시 scr에서 요청을 함. js/b.js를 만나면 이걸 서버에 요청을 함
+    이 페이지에 대한 정보를 서버에서 보내줌. 그럼 실행을 해서 보니까 현재 위에 대한 정보가 없음
+그래서 처리를 모새준다. -->
+  </head>
+
+  <body>
+    <p id="wrap">data</p>
+    <img
+      alt="defer"
+      src="https://www.josefzacek.cz/wp-content/uploads/2018/03/whats-the-difference-between-async-vs-defer-attributes.jpg"
+    />
+
+    <script></script>
+  </body>
+</html>

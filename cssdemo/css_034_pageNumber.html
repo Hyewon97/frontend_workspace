@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_034_pageNumber.html</title>
+    <style>
+      /* 리스트 모양 없애기 */
+      ol.paging {
+        list-style-type: none;
+      }
+
+      ol li {
+        float: left; /* 한줄로 세우기 */
+        margin-right: 8px; /* 텍스트 간 간격 띄우기 */
+      }
+
+      ol.paging li a {
+        text-decoration: none; /* 텍스트 밑줄 없애기 */
+        border: 1px solid black; /* 박스 설정하기 */
+        padding: 3px 7px; /* 위아래, 좌우*/
+        color: #000000;
+      }
+
+      ol.paging li a:hover {
+        /* 마우스를 가져다 댔을 때*/
+        background-color: #00b3dc; /* 배경 색상 변환 */
+        color: white; /* 텍스트 색 하얀색 */
+        font-weight: bolder; /* 두껍게 */
+      }
+    </style>
+  </head>
+  <body>
+    <ol class="paging">
+      <li><a href="">이전으로</a></li>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">다음으로</a></li>
+    </ol>
+  </body>
+</html>
