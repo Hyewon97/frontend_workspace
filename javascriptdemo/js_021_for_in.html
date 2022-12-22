@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_021_for_in.html</title>
+  </head>
+  <body>
+    <script>
+      let color = ["red", "green", "blue"]; // 배열 쓸때?
+      console.log(color[0]); // red     //0번째 인덱스에 있는 값을 가져와라
+      console.log(color[1]); // green
+      console.log(color[2]); // blue
+      console.log(color[3]); // undefined... 자바에서는 오류가 발생됨
+
+      // length : 요소의 개수 리턴
+      console.log(color.length); // 3
+
+      for (let index = 0; index <= 2; index++) {
+        console.log(color[index]);
+      }
+      color[3] = "black";
+      console.log(color[3]);
+
+      // 배열에 요소 수정
+      color[1] = "white";
+      console.log(color[1]);
+
+      console.log(color.length);
+
+      for (let index = 0; index < color.length; index++) {
+        console.log(color[index]);
+      }
+
+      // 객체 리터널 : {property:value, property:value}
+
+      // java : element를 가져옴. for(string element:city)
+      // javascript: index를 가져옴 for(let idx in city){ }
+      let city = ["서울", "부산", "대전"];
+      for (let idx in city) {
+        console.log(idx);
+      }
+
+      // obj의 속성 a의 값은 1.. 이런식을 하는 듯?
+      let obj = { a: 1, b: 2, c: 3 };
+      console.log(obj);
+
+      console.log(obj.a); //변수.속성
+      console.log(obj.b);
+      console.log(obj.c);
+
+      for (let prop in obj) {
+        //console.log(prop); // 객체의 property만 가지고 오게 됨. 출력 a,b,c
+        console.log(`${prop}: ${obj[prop]}`);
+
+        // undefined 출력.. 왜 그럴까.. 변수에 있는 값을 가져와야해서 처리를 해야하기 떄문에 .로는 안됨
+        // 객체.변수로 들어가기 때문에 제대로 출력이 되게 하려면 위에 처럼 ${obj[prop]} 로 처리를 해줘야한다.
+        console.log(`${prop}: ${obj.prop}`);
+      }
+      console.log(obj.a);
+    </script>
+  </body>
+</html>
