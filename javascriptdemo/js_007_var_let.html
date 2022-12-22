@@ -6,5 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>js_007_var_let.html</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // 변수 선언 전 =>  Uncaught ReferenceError: foo is not defined
+      // 변수 선언 후 => foo:undefined
+      console.log(`foo:${foo}`);
+
+      // 변수 선언 전 => Uncaught ReferenceError: foo is not defined
+      // 변수 선언 후 => Uncaught ReferenceError: Cannot access 'bar' before initialization
+      //   console.log(`bar:${bar}`);
+
+      // 밑에 있는 var과 let을 코드 상의 최상단으로 끌어올리는게 호스팅임.
+      var foo;
+      let bar;
+      console.log(`bar:${bar}`);
+      bar = 1;
+
+      // let은 선언되는 변수는 처리되는 단계가 다름. 선언은 됨. 호이스팅이 발생이 됨. 초기값 할당은
+      // 위에서 할당이 됨.
+      //
+      console.log(`bar:${bar}`);
+    </script>
+  </body>
 </html>
