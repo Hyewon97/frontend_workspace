@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_022_for_of.html</title>
+  </head>
+  <body>
+    <script>
+      // for ~ of : element을 가져옴
+      let color = ["red", "green", "blue"];
+      for (let element of color) {
+        console.log(element);
+      }
+
+      let subject = "script";
+      for (let idx in subject) {
+        console.log(idx);
+      }
+
+      // 문자를 하나씩 출력
+      for (let element in subject) {
+        console.log(element);
+      }
+
+      //
+      console.log("=============================");
+      let obj = { a: 1, b: 2, c: 3 };
+      for (let idx in obj) {
+        console.log(idx);
+      }
+
+      // Uncaught TypeError: obj is not iterable
+      // 리터러블 한 객체가 아님.--> of로 가져오기 못한다.
+      for (let val of obj) {
+        console.log(val);
+      }
+
+      /*
+      for ~ of 문은 반복 가능한 객체(Array, String, Set, arguments)만 가능하다.
+      즉, iterable속성을 가진 객체만 가능하다.
+      */
+    </script>
+  </body>
+</html>
