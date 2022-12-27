@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_038_submit_1.html</title>
+    <!-- <script defer src="js_038_submit_1.js"></script> -->
+    <!-- <script defer src="js_038_submit_2.js"></script> -->
+    <!-- <script defer src="js_038_submit_3.js"></script> -->
+    <script defer src="js_038_submit_4.js"></script>
+  </head>
+  <body>
+    <!--   현재 페이지로 감.(로그인 할 때)-->
+    <form action="#" name="log_f" method="get">
+      <input type="text" name="my_id" placeholder="아이디입력" id="my_id" />
+      <input
+        type="text"
+        name="my_pass"
+        placeholder="비밀번호 입력"
+        id="my_pass"
+      />
+
+      <!-- <input type="submit" value="login" /> -->
+
+      <!--버튼 눌려도 동작을 안함. 여러 버튼을 만들고, 실체 페에지를 만들때?-->
+      <!-- <input type="button" value="login" id="btn" /> -->
+      <!-- 이거 3번인데 1,3,4 코드는 같대. <button value="login">login</button> 이거 안됨 ㅋㅋ js 뭘 지우면 안된대 -->
+
+      <!-- form안에 생성하면 이벤트가 발생 됨 -->
+      <input id="imgBtn" type="image" src="images/signin.gif" />
+    </form>
+  </body>
+</html>
