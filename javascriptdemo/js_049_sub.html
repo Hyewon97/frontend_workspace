@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_049_sub.js</title>
+    <script defer src="js_049_popup.js"></script>
+  </head>
+  <body>
+    <div id="pt">
+      <!--                                아이기 값을 참조하겠다. -->
+      <img src="images/popup.jpg" usemap="#pop" />
+
+      <map name="pop" id="pop">
+        <!-- 옛날에 실행한 방법 -->
+        <!-- coors='x start, y start, x end, y end'-->
+        <!-- 창닫기 영역, map안에서 정의를 해줘야 함 -->
+        <area
+          shape="rect"
+          coords="255,332,290,345"
+          href="#"
+          alt="창닫기"
+          onclick="window.close()"
+        />
+      </map>
+    </div>
+  </body>
+</html>
