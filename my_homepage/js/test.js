@@ -10,8 +10,8 @@ setInterval(function () {
   tg.style.transition = "0.6s";
 
   /*
-  실행하고 3초가 지나면 아래 코드를 실행하라.
-  */
+    실행하고 3초가 지나면 아래 코드를 실행하라.
+    */
   setTimeout(function () {
     //tg- li에 있는 첫번째
     let first = tg.querySelectorAll("li")[0];

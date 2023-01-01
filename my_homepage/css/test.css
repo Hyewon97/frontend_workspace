@@ -13,9 +13,9 @@ a {
   text-decoration: none;
 }
 
-/* body *{
-    outline: 2px dashed blue;
-} */
+body * {
+  outline: 2px dashed blue;
+}
 ul,
 ol {
   padding: 0;
@@ -29,57 +29,95 @@ li {
 /* 공통 CSS */
 
 /* 중앙정렬박스 */
+/*  지우면 안됨 */
 .ibx {
-  width: 1200px;
-  margin: 0 auto; /* 마영오  auto로 주면 자동 정렬이 된다.*/
+  width: 1516px;
+  margin: 0 auto; /* 마영오 */
 }
+
 /* 파티션박스 */
 .pbx {
   float: left;
-  height: 100%; /* 부모높이채움!, 부모 기준 높이 */
+  height: 100%; /* 부모높이채움! */
   padding: 10px;
   box-sizing: border-box;
   /* 박스가 패딩때문에 커지는 것을 방지! */
 }
 /* 부모자격 */
 .prt {
-  /* 포지션 값을 줌 */
   position: relative;
 }
 
 /****************** A ******************/
 .top {
   position: relative; /* z-index때문에 줌 */
-  height: 100px;
-
-  /* 메뉴가 제일 위에 있도록 하기 위해서.. 0으로 해보면.. 나중에 해보세요 지금은 하지마 */
-  z-index: 999; /* 가장위 */
+  height: 60px;
+  z-index: 999; /*가장위*/
 }
 /* 파티션가로값 */
+/* 추가 */
+.top0 {
+  width: 258px;
+  /* background-color: red; */
+}
 .top1 {
-  width: 200px;
+  width: 1000px;
+  /* background-color: green; */
+  font-style: italic, red;
 }
 .top2 {
-  width: 1000px;
-}
-/* 로고 */
-.logo {
-  margin-left: -10px;
+  width: 258px;
+  /* background-color: pink; */
+  /* font-size: 20px; */
 }
 
 /* 메뉴 */
+.menu {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+/* 로고 */
+.logo {
+  margin-left: 400px;
+  margin-top: 3px;
+}
+
+/* 회원가입 */
+.signin {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+
+/* 상단 메뉴 바 회색 처리 */
+.top {
+  border: solid gray 1px;
+}
+
+/* 메뉴에 마우스 올렸을 때 카테고리 펼쳐지기,, 표로 작성 */
+
+/*###################################
+###################################
+일단 여기 까지
+###################################
+###################################*/
+
+/* 메뉴 */
 .gnb {
-  position: absolute;
+  /* position: absolute; */
   top: 25px;
   right: 50px;
   /* 부모는? 싸고있는 .pbx.prt */
-  width: 800px;
-  height: 50px;
-  background-color: rgb(117, 188, 255);
+  width: 258px;
+  height: 60px;
+  margin-top: -10px;
+  margin-left: -10px;
+  background-color: yellow;
 }
 .gnb li {
   width: 200px;
-  /* height: 50px; */
+  height: 50px;
   /* li의 높이값을 안주면 a에 설정된 줄간격이 높이값이됨! */
 }
 .gnb a {
@@ -87,29 +125,27 @@ li {
   width: 100%;
   height: 100%;
 
-  /* background-color: purple; */
-
   /* 글자설정 */
-  font-size: 20px;
+  font-size: 210px;
   font-weight: bold;
   line-height: 50px;
   text-align: center;
 }
 /* 서브메뉴 */
 .gnb ol {
-  height: 0; /* 처음에 보이면 안되니까 0px로 만듦. 마우스 올렸을 때 보이도로 함, 보이면 200px; */
+  height: 0; /* 200px; */
   background-color: rgba(218, 238, 255, 0.9);
   overflow: hidden; /* 숨기기 */
   transition: height 0.4s;
 }
-/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기 */
+/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기*/
 .gnb:hover ol {
   height: 170px;
   /* 줄간격 40px * 4 = 160px + 여유공간*/
 }
-/* 서브메뉴 a */
+/* 서브메뉴 a.. 이게 아마 마우스 올려놓을때 그거 같은데 */
 .gnb ol a {
-  font-size: 16px;
+  font-size: 100px;
   line-height: 40px;
 }
 
@@ -125,8 +161,8 @@ li {
 
 /******************* B *******************/
 .ban {
-  height: 300px;
-  overflow: hidden; /*넘치는 슬라이드 숨기기 */
+  height: 450px;
+  overflow: hidden; /* 넘치는 슬라이드 숨기기 */
 }
 /* 슬라이드 */
 .slide {
@@ -151,7 +187,7 @@ li {
 }
 .tm li a {
   display: block;
-  width: 100px;
+  width: 1000px;
   text-align: center;
   line-height: 40px;
   background-color: rgb(94, 169, 255);
@@ -195,7 +231,7 @@ li {
   white-space: nowrap;
   /* 1.줄바꿈방지 */
   overflow: hidden;
-  /* 2.넘치는 글자숨기기 ... 으로 처리 됨 */
+  /* 2.넘치는 글자숨기기 */
   text-overflow: ellipsis;
   /* 3.텍스트 말줄임표시 */
 }
@@ -226,7 +262,6 @@ li {
   z-index: 999;
   background-color: #fff;
   border: 3px solid #888;
-
   display: none; /* 처음에 안보임! */
 }
 .pop h1 {
