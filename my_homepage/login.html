@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- 상단 카테고리 -->
+    <header class="ibx top">
+      <!-- 메뉴 -->
+      <div class="pbx top0 prt">
+        <ul class="gnb">
+          <li>
+            <a href="#">MENU</a>
+            <ol>
+              <li><a href="#">About Lee-</a></li>
+              <li><a href="#">Album</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">MEDIA</a></li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+      <!-- 로고 -->
+      <div class="pbx top1">
+        <h1 class="logo">
+          <a href="index.html">
+            <span>LEE-</span>
+          </a>
+        </h1>
+      </div>
+
+      <!-- 로그인 -->
+      <div class="pbx top2">
+        <h1 class="signin">
+          <a href="#">
+            <span>JOIN</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+
+    <!-- 로그인 창 -->
+    <div class="login-wrapper">
+      <h2>Login</h2>
+      <form method="get" action="#" name="log_f" id="login-form">
+        <input type="text" name="userName" placeholder="ID" id="userName" />
+        <input
+          type="password"
+          name="userPassword"
+          placeholder="Password"
+          id="userPassword"
+        />
+        <label for="remember-check">
+          <input type="checkbox" id="remember-check" />아이디 저장하기
+        </label>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </body>
+</html>
