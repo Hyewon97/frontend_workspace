@@ -1,0 +1,326 @@
+@charset "utf-8";
+/* 메인 CSS - main.css */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+  color: black;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 가이드 선 */
+/* body * {
+  outline: 2px dashed blue;
+} */
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li {
+  float: left;
+  list-style: none;
+}
+
+/* 공통 CSS */
+/* ===== 중앙정렬박스======== */
+.ibx {
+  width: 1516px;
+  margin: 0 auto; /* 마영오 */
+}
+
+/* 파티션박스 */
+.pbx {
+  float: left;
+  height: 100%; /* 부모높이채움! */
+  padding: 10px;
+  box-sizing: border-box;
+  /* 박스가 패딩때문에 커지는 것을 방지! */
+}
+
+/* 부모자격 */
+.prt {
+  position: relative;
+}
+/* ================================ */
+
+/* 상단 카테고리 */
+.top {
+  position: relative;
+  height: 60px;
+  z-index: 999;
+}
+
+.top0 {
+  width: 258px;
+  margin-left: -10px;
+}
+.top1 {
+  width: 1000px;
+  font-style: italic;
+}
+.top2 {
+  width: 258px;
+}
+
+/* 로고 */
+.logo {
+  margin-left: 450px;
+  margin-top: 3px;
+}
+
+/* 회원가입 */
+.signin {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+/* 펼쳐지는 메뉴 */
+.gnb li {
+  width: 300px;
+  height: 50px;
+}
+.gnb a {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /*카테고리 큰 글씨 사이즈*/
+  font-size: 20px;
+
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+/* 서브메뉴 */
+.gnb ol {
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden; /* 숨기기 */
+  transition: height 0.5s;
+}
+/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기*/
+.gnb:hover ol {
+  height: 200px;
+}
+
+/* 서브메뉴*/
+.gnb ol a {
+  font-size: 15px;
+  line-height: 40px;
+  color: white;
+}
+
+/* 메뉴 마우스 반응 */
+.gnb li:hover > a {
+  background-color: white;
+  color: black;
+}
+/* 서브 메뉴 마우스 반응 */
+.gnb ol li:hover a {
+  background-color: white;
+}
+
+/* 사진 슬라이드 */
+.ban {
+  height: 550px;
+  overflow: hidden;
+}
+/* 슬라이드 */
+.slide {
+  position: relative;
+  top: 0;
+}
+
+/*============ about ====================*/
+.main_L {
+  margin-left: 20px;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+}
+
+.pro {
+  /* position: absolute; */
+  border: solid white 3px;
+  margin-left: 500px;
+  margin-top: 10px;
+}
+
+.pro2 {
+  /* font-size: 10px; */
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: white;
+}
+/*===========================================*/
+
+/*============ album ====================*/
+.al1 {
+  margin-left: 650px;
+  margin-top: 20px;
+  font-size: 35px;
+  font-weight: bold;
+  color: red;
+}
+
+.al_pic {
+  margin-top: 10px;
+  margin-left: 550px;
+}
+.al2 {
+  position: absolute;
+  margin-left: 70px;
+  margin-top: 20px;
+  font-size: 30px;
+  color: white;
+}
+/*===========================================*/
+
+/*===================== 갤러리 ======================*/
+.gal_set {
+  margin-left: 300px;
+}
+
+.gal li {
+  margin: 10px 10px;
+}
+.gal img {
+  width: 200px;
+  border: 1px solid white;
+}
+/*===========================================*/
+/********************** C **********************/
+.cont {
+  margin-left: 200px;
+  height: 300px;
+  width: 1200px;
+}
+/* 파티션가로값 (한꺼번에 등분할!) */
+.cont > .pbx {
+  width: 400px;
+}
+
+/* 탭내용박스 */
+.tc {
+  height: 280px;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  background-color: rgba(255, 255, 255);
+}
+/* 탭내용박스 li - 2개 */
+.tc > li {
+  width: 100%;
+  height: 100%;
+  display: none; /* 모두안보임 */
+}
+/* 선택된 탭내용박스 li 클래스 */
+.tc > li.on {
+  display: block;
+}
+
+/* 공지사항 리스트박스 */
+.gong {
+  padding-top: 9px;
+  padding-left: 7px;
+}
+.gong li {
+  float: none;
+  line-height: 24px;
+}
+.gong a {
+  color: black;
+  display: inline-block;
+  /* 줄안바뀌면서 width디자인 적용위해 */
+  width: 270px;
+
+  /* 아래 3가지로 한줄짜리 말줄임표시하기 */
+  white-space: nowrap;
+  /* 1.줄바꿈방지 */
+  overflow: hidden;
+  /* 2.넘치는 글자숨기기 ... 으로 처리 됨 */
+  text-overflow: ellipsis;
+  /* 3.텍스트 말줄임표시 */
+}
+
+/* 날짜표시 오른쪽끝으로 */
+.gong span {
+  float: right;
+  padding-right: 5px;
+}
+
+/* 팝업창 */
+.pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  padding: 15px;
+  z-index: 999;
+  background-color: #fff;
+  border: 3px solid gray;
+
+  display: none; /* 처음에 안보임! */
+}
+.pop h1 {
+  /* 팝업제목 */
+  font-size: 24px;
+  text-align: center;
+}
+.pop p {
+  /* 팝업내용문단 */
+  line-height: 30px;
+}
+/* 닫기버튼박스 */
+.bbx {
+  text-align: center;
+}
+
+/* 배너, 바로가기 이미지 공통 */
+.im {
+  width: 100%;
+  height: 100%;
+}
+
+/******************** D ********************/
+.info {
+  margin-top: 300px;
+  margin-left: 100px;
+  height: 100px;
+  color: white;
+}
+/* 파티션가로값 */
+.info1 {
+  width: 200px;
+}
+.info2 {
+  /* 카피라잇 */
+  width: 800px;
+  text-align: center;
+  line-height: 80px;
+  margin-left: 50px;
+  font-style: italic;
+  /* 위아래 패딩값 20px제외 */
+  font-weight: bold;
+}
+.info3 {
+  width: 200px;
+  text-align: center;
+  line-height: 107px;
+}
+/* sns 이미지 */
+.info3 img {
+  width: 40px;
+  margin: 0 5px;
+}
