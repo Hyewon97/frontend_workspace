@@ -13,9 +13,9 @@ a {
   text-decoration: none;
 }
 
-/* body *{
-    outline: 2px dashed blue;
-} */
+body * {
+  outline: 2px dashed blue;
+}
 ul,
 ol {
   padding: 0;
