@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery004_selector.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        //nth-child(n), nth-of-type(n)은 1부터 시작
+        // 2개의 공통점을 인덱스 0번부터 따짐.
+        // li:even 하면 인덱스 0번부터 따짐.. 이건 j 03이야기
+
+        // div 요소에서 모든 자식요소 중 2번째의 요소로 p요소이면 스타일 적용
+        // 근데 이거 적용이 안되는 느낌인데
+        $("p:nth-child(2)").css({
+          color: "red",
+        });
+
+        // div요소에서 2번째에 해당하는 p요소에 스타일 적용
+        $("p:nth-of-type(2)").css({
+          color: "blue",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <p>part01</p>
+      <span>line</span>
+      <p>part02</p>
+      <p>part03</p>
+    </div>
+  </body>
+</html>

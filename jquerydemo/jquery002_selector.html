@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery002_selector.html</title>
+    <!-- 밑에 스타일이 jqyery 스타일과 같다. -->
+    <!-- <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        border-width: 0px;
+      } -->
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 하이폰이 들어가면 이름을 작은 따음표 또는 큰 따음표로 묶어준다.
+        // 단위를 사용할때도 묶어준다.
+        $("*").css({ margin: "0px", padding: "0px", "border-width": "0px" });
+
+        $('div').css({
+            'background-color':'green',
+            'width':'200px',
+            'height':'200px'
+        });
+
+        $('#line').css({color:'orange'})
+
+        // 클래스 접근
+        $('.common').css({border: '1px solid black'});
+        $('a[href]').css({color:'aqua'});
+
+        // 어떤 객체를 통해서 객체의 부모, 자식에게 접근하기
+
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <p id="line">line</p>
+    <p class="common">common</p>
+    <a href="#">korea</a>
+  </body>
+</html>

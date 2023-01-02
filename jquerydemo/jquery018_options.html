@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery018_options.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let arr = [
+          ["불고기", "삼게탕", "비빔밥"],
+          ["짜장면", "짬뽕", "탕수육"],
+          ["회덮밥", "덴뿌라", "우동"],
+        ];
+        let row = 0;
+        $("#menu").change(function () {
+          // 선택되어 있는 인덱스 값을 가져와야 함.. 0,1,2...
+          //   console.log($(this).text());
+          //   1 'm1' 'menu'
+          // 이 방법을 사용한다!
+          //   console.log(this.selectedIndex, this.value, this.name);
+          // this를 이용해서 현재 선택되어 있는 항목을 가져와라.
+          // this라는 객체에서 현재 선택된 항목을 가져와라
+          //   console.log($("option:selected", this).index());
+          //   console.log($("option:selected", this).text());
+          //   console.log($("option:selected", this).val());
+
+          // 삭제를 안하면 메뉴선택 시에 음식이 전 메뉴 음식과 함께 출력이 된다.
+          // 인덱스 값이 나올거고
+
+          row = $("option:selected", this).index();
+
+          console.log(row);
+
+          if (row == 0) {
+            alert("메뉴를 선택하세요.");
+            // console.log($("option:selected", this));
+            // $(this).prop('selected')=false;
+            return false;
+          }
+
+          // 문제 : 메뉴 선택을 하면 오류가 발생한다.
+
+          // 서브메뉴 삭제
+          if (row != 0) {
+            $("#sub option.food").remove();
+
+            // 서브메뉴 추가
+            arr[row - 1].map(function (element) {
+              $("#sub").append(`<option class="food">${element}</option>`);
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <select id="menu" name="menu">
+      <option value="" selected="selected">메뉴선택</option>
+      <option value="m1">한식</option>
+      <option value="m2">중식</option>
+      <option value="m3">일식</option>
+    </select>
+    <select id="sub">
+      <option value="">음식선택</option>
+    </select>
+  </body>
+</html>
