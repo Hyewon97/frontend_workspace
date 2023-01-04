@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery019_event.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 아이디 box1에 마우스가 올려지면 이 함수를 실행하라
+        $("#box1").mouseover(function () {
+          $(this).text("mouseover");
+        });
+
+        $("#box1").mouseout(function () {
+          $(this).text("mouseout");
+        });
+
+        $("#box2").hover(
+          function () {
+            $(this).text("mouseover");
+          },
+          function () {
+            $(this).text("mouseout");
+          }
+        );
+      });
+    </script>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">
+      mouseover<br />
+      mouseout
+    </div>
+    <div id="box2">hover</div>
+  </body>
+</html>
