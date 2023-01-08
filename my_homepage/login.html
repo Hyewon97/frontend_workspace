@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <script defer src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script defer src="js/main.js"></script> -->
+
+    <script>
+      $(document).ready(function () {
+        $("input[type=submit]").click(function () {
+          let idNode = document.querySelector("#userName");
+          let passNode = document.querySelector("#userPassword");
+
+          if (idNode.value == "") {
+            alert("아이디를 입력하세요.");
+            return false;
+          }
+          // elseif 쓰며 안됨. 비교할 대상이 다름.
+          if (passNode.value == "") {
+            alert("비밀번호를 입력하세요.");
+            return false;
+          }
+          // doucument.log_f.action='#'
+          // 강제적으로 submit() 이벤트를 발생시킨다.
+          document.log_f.submit();
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- 상단 카테고리 -->

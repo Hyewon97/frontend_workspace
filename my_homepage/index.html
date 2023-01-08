@@ -4,7 +4,49 @@
     <meta charset="utf-8" />
     <title>my_homepage</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <script defer src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script defer src="js/main.js"></script> -->
+
+    <!-- jQuery library (served from Google) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 슬라이드 jQ -->
+    <!-- bxSlider Javascript file -->
+    <script src="/js/jquery.bxslider.min.js"></script>
+    <!-- bxSlider CSS file -->
+    <link href="/lib/jquery.bxslider.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
+
+
+    <!-- 슬라이드 -->
+    <script>
+      $(document).ready(function () {
+        $(".slide").bxSlider({
+          mode: "vertical", // 세로 수평 슬라이드 설정
+          speed: 700, // 이동 속도 설정
+
+          // 현재 위치 페이징 표시 여부 설정
+          pager: false, // 사진 밑에 동그라미 표시 없어짐
+          moveSliders: 1, // 슬라이드 이동시 개수 설정
+          slideWidth: 1513, // 슬라이드 마다 너비 설정
+          auto: true, // 자동적으로 슬라이드 이동
+          autoHover: false, // 마우스 오버시 정지시킴 설정
+          controls: false, // 이전 다음 버튼 노출 여부 설정
+
+        });
+      });
+    </script>
+
+    <!-- 팝업 -->
+    <script>
+    function popup(sts) {
+    var pop = document.querySelector(".pop");
+    pop.style.display = sts;
+    }
+    </script>
+
+
   </head>
 
   <body>
@@ -85,7 +127,7 @@
           <li class="on">
             <ul class="gong">
               <li>
-                <a href="#" onclick="popup('block')">
+                <a  href='#' onclick="popup('block')">
                   [공지]이영지 쇼미더머니11 우승
                 </a>
                 <span>2022. 12. 30</span>
