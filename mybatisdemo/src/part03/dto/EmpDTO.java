@@ -3,7 +3,7 @@ package part03.dto;
 public class EmpDTO {
 	private int employee_id, department_id;
 	private String first_name, job_id;
-	private DeptDTO dept;
+	private DeptDTO dept; //1대1의 관계 join이라 dept로 해줌
 	
 	public EmpDTO() {
 		

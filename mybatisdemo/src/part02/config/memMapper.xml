@@ -2,26 +2,156 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
- <mapper namespace="mem">
- 	<select id="list" resultType="part02.dto.MemDTO">
- 	SELECT * FROM mem
- 	ORDER BY num
- 	</select>
- 	
- 											<!-- 여기에 있는 값을 가져옴, 아래 이름으로 된 게터 가 있어야 함  -->
- 	<insert id="memInsert" parameterType="part02.dto.MemDTO">
- 	INSERT INTO mem(num, name, age, loc)
- 	VALUES(mem_num_seq.nextval, #{name, jdbcType=VARCHAR}, #{age}, #{loc})
- 	</insert>
- 	
- 	<update id="memUpdate" parameterType="part02.dto.MemDTO">
- 	UPDATE mem set name=#{name}, age=#{age}, loc=#{loc}
- 	WHERE num=#{num}
- 	</update>
- 	
- 	<delete id="memDelete" parameterType="int">
- 	DELETE FROM mem
- 	WHERE num=#{num}
- 	</delete>
- </mapper>
+
+<mapper namespace="mem">
+	<select id="list" resultType="part02.dto.MemDTO">
+		SELECT * FROM mem
+		ORDER BY num DESC
+
+
+	</select>
+
+	<!-- 여기에 있는 값을 가져옴, 아래 이름으로 된 게터 가 있어야 함 -->
+	<insert id="memInsert" parameterType="part02.dto.MemDTO">
+		INSERT INTO mem(num, name,
+		age, loc)
+		VALUES(mem_num_seq.nextval, #{name, jdbcType=VARCHAR},
+		#{age}, #{loc})
+	</insert>
+
+	<update id="memUpdate" parameterType="part02.dto.MemDTO">
+		UPDATE mem set
+		name=#{name}, age=#{age}, loc=#{loc}
+		WHERE num=#{num}
+	</update>
+
+	<delete id="memDelete" parameterType="int">
+		DELETE FROM mem
+		WHERE
+		num=#{num}
+	</delete>
+
+	<!-- 다중 insert -->
+	<!-- INSERT ALL INTO mem(num, name, age, loc) VALUES(1, '홍길동', 30 , '서울') 
+		INTO mem(num, name, age, loc) VALUES(2, '유대위', 29 , '경기') SELECT * FROM dual; -->
+
+
+	<select id="keyNum" resultType="int" flushCache="true">
+		SELECT
+		mem_num_seq.nextval
+		FROM dual
+	</select>
+
+	<insert id="multiIns" parameterType="java.util.List"> <!-- 파라미터 생략 가능 -->
+		INSERT ALL
+		<!-- mybaits에서는 소문자로 씀(foreach) , 콜렉션에 넣을 수 있는거 list, array 둘 다 소문자로 넣어야 
+			함. -->
+
+		<!-- 변수 인덱스 변수 -->
+		<foreach collection="list" item="element" index="no">
+			INTO mem(num,
+			name, age, loc)
+			VALUES(#{element.num}, #{element.name},
+			#{element.age}, #{element.loc})
+		</foreach>
+		SELECT * FROM dual
+	</insert>
+
+
+	<!-- 다중 delete -->
+	<delete id="multiDel">
+		DELETE FROM mem
+		WHERE num IN(<!-- 배열로 처리를 한다. 구분자 -->
+		<foreach collection="array" item="element" separator=",">
+			#{element}
+		</foreach>
+		)
+	</delete>
+
+
+	<!-- dynamic if -->
+	<select id="partSearch" parameterType="part02.dto.MemDTO"
+		resultType="part02.dto.MemDTO">
+		<!-- mem 컬럼에 있는 값이 (조건) 일때, 조건이 두 개이면 AND로 묶어줌 근데 경우에 따라서, 여러 조건 중에 하나만 
+			오는 경우가 있다. 하지만 원하는건 두 조건을 충족시킬 떄 한 조건만 충족시킬 수 있는 셀렉트 문이 있어야 하는데. 이렇게 하지 않고 
+			다이나믹 이프를 사용해서 이 세개를 하나의 셀렉트로 사용할 수 있다. -->
+
+		SELECT * FROM mem
+		<!--where> < 이름이 널이 아니면 : 이름이 조건으로 사용 되었다면 <if test="name!=null"> name 
+			LIKE '%' || #{name} ||'%' </if> <if test="age!=null"> OR age > #{age} </if> 
+			</where> -->
+
+		<!-- 앞에 or 없애려고 사용한다., 뒤에 or을 없애기 위해서는 suffix 앞 추가 : priefix 뒤 추가 : suffix -->
+		<trim prefix="where" suffixOverrides="or/and">
+			<if test="name!=null">
+				name LIKE '%' || #{name} || '%'
+			</if>
+
+			<if test="age!=0">
+				OR age > #{age}
+			</if>
+
+		</trim>
+	</select>
+
+	<!-- set 자리에 업데이트 시킬 컬럼을 지정을 한다. 이 경우를 예외처리 해야하는 경우 -->
+	<!-- 다중 update -->
+	<!-- 같다가 아닌 대입. 왼쪽 데이터를 오른쪽에 넣는다. -->
+	<update id="multiUpt" parameterType="part02.dto.MemDTO">
+		UPDATE mem
+
+		<set>
+			<if test="name!=null">
+				name=#{name},
+			</if>
+
+			<if test="age!=0">
+				age=#{age},
+			</if>
+
+			<if test="loc!=null">
+				loc=#{loc}
+			</if>
+		</set>
+
+		WHERE num=#{num}
+	</update>
+
+	<!-- choose 동작 SQL -->
+	<!-- loc값이 null값이 넘어오면 test, 아니면 그 값 그대로 들어옴 -->
+	<insert id="insData" parameterType="part02.dto.MemDTO">
+		
+		INSERT INTO mem VALUES(mem_num_seq.nextval, #{name}, #{age},
+		<choose> <!-- 요소는 다 소문자를 사용한다. -->
+			<when test="loc==null">
+				'test'
+			</when>
+			<otherwise>
+				#{loc}
+			</otherwise>
+		</choose>
+		)
+	</insert>
+</mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

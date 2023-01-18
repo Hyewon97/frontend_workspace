@@ -6,28 +6,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>empDeptJoin</title>
 </head>
 <body>
-
-	<table>
-		<tr>
-			<th>employee_id</th>
-			<th>first_name</th>
-			<th>job_id</th>
-			<th>department_id</th>
-			<th>departmet_name</th>
-		</tr>
-		<c:forEach items="${aList} var="dto">
+		<table>
 			<tr>
-				<td>${dto.employee_id}</td>
-				<td>${dto.first_name}</td>
-				<td>${dto.job_id}</td>
-				<td>${dto.dept.department_id}</td>
-				<td>${dto.dept.department_name}</td>
+				<th>employee_id</th>
+				<th>first_name</th>
+				<th>job_id</th>
+				<th>department_id</th>
+				<th>department_name</th>
 			</tr>
-		</c:forEach>
-
+			<c:forEach items="${aList}" var="dto">
+				<tr>
+					<td>${dto.employee_id}</td>
+					<td>${dto.first_name}</td>
+					<td>${dto.job_id}</td>
+					<td>${dto.dept.department_id}</td>
+					<td>${dto.dept.department_name}</td>
+				</tr>
+			</c:forEach>
+		</table>
 
 
 	</table>
