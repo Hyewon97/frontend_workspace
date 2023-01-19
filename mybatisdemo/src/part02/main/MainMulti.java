@@ -31,7 +31,6 @@ public class MainMulti {
 //		MemDTO dto = new MemDTO();
 ////		dto.setName("길"); // 얘를 주석처리 하면 나이가 20이상인 사람만 출려이 된다.
 //		dto.setAge(20); // 얘를 주석 처리 하면 이름에 길이 포함된 사람만 출력 되는건가? 근데 출력 값은 다 나옴. 홍길동 안나오는데?
-//		
 //		memList(mController.getPartSearchExecute(dto));
 		
 //		MemDTO dto = new MemDTO();
@@ -42,10 +41,10 @@ public class MainMulti {
 //		System.out.printf("Update Count : %d\n",chk);
 //		memList(mController.getAllListExecute()); 
 		
-		MemDTO dto = new MemDTO("전다래", 30, null); // 생성자 바로 입력
-		int chk=mController.setInsertDataExecute(dto);
-		System.out.printf("Insert Count :%d\n",chk);
-		memList(mController.getAllListExecute());
+//		MemDTO dto = new MemDTO("전다래", 30, null); // 생성자 바로 입력
+//		int chk=mController.setInsertDataExecute(dto);
+//		System.out.printf("Insert Count :%d\n",chk);
+//		memList(mController.getAllListExecute());
 		
 
 	} // end main

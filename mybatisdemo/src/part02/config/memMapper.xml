@@ -82,7 +82,7 @@
 			</where> -->
 
 		<!-- 앞에 or 없애려고 사용한다., 뒤에 or을 없애기 위해서는 suffix 앞 추가 : priefix 뒤 추가 : suffix -->
-		<trim prefix="where" suffixOverrides="or/and">
+		<trim prefix="where" suffixOverrides="or|and">
 			<if test="name!=null">
 				name LIKE '%' || #{name} || '%'
 			</if>
